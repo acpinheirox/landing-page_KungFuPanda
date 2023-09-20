@@ -1,0 +1,69 @@
+
+.hero {
+    background-image: url('/src/images/kung-fu-panda-hero.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: -20px;
+    background-position:top;
+    min-height: 90vh;
+    position: relative;
+    margin-top: -90px;
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to bottom, transparent, #ffcb63);
+        content: '';
+    }
+
+    &__branding {
+        position: relative;
+        display: flex;
+        padding-left: 5vw;
+        justify-items: center;
+        flex-direction: column;
+        align-items: stretch;
+        min-height: 90vh;
+        justify-content: center;
+
+        img {
+            width: 30%;
+        }
+    }
+
+    @media (max-width: 767px) {
+        background-image: url('/src/images/kung-fu-panda-hero.jpg');
+        min-height: 100vh;
+        margin-top: -60px;
+
+        &__branding {
+            padding-left: 0;
+            align-items: center;
+
+            h1 {
+                text-align: center;
+            }
+
+            img {
+                width: 80%;
+            }
+        }
+    }
+
+    @media (max-width: 1023px) {
+        background-image: url('/src/images/kung-fu-panda-hero.jpg');
+        min-height: 100vh;
+
+        &__branding {
+            padding-left: 0;
+            align-items: center;
+
+            img {
+                width: 80%;
+            }
+        }
+    }
+}

@@ -1,0 +1,66 @@
+@use 'variaveis';
+
+.extras {
+    padding: 5.6vw;
+    min-height: 50vh;
+
+    &__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+    }
+
+    @media (max-width: 767px) {
+        display: block;
+
+        &__list {
+            display: block;
+            margin-top: 16px;
+            position: relative;
+
+            &__item {
+                background-color: variaveis.$corDeFundoBotao;
+                margin-bottom: 16px;
+
+                .text-section {
+                    display: none;
+                    padding: 16px;
+                    position: relative;
+                }
+
+
+                h3{
+                    text-align: left;
+                    position: relative;
+                    padding: 16px;
+                    border-radius: 3px;
+                    font-size: 16px;
+                    
+                    &::after {
+                        content: url('../../dist/images/expandir.png');
+                        position: absolute;
+                        top: 16px;
+                        right: 24px;
+                        display: flex;
+                        align-items: center;
+                        font-size: 32px;
+                    }
+                }
+                
+                &--is--open {
+                    .text-section {
+                        display: grid;
+                    }
+
+                    h3::after {
+                        content: url('../../dist/images/fechar.png');
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1023px) {
+        min-height: 5vw;
+    }
+}

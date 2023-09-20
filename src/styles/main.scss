@@ -1,0 +1,131 @@
+@use 'variaveis';
+@use 'hero';
+@use 'shows';
+@use 'filmes';
+@use 'extras';
+@use 'footer';
+@use 'header';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Bebas Neue', sans-serif;
+    list-style: none;
+}
+
+body {
+    background-color: variaveis.$corDeFundo;
+    display: block;
+    color: black;
+}
+
+@mixin text($fontSize: 16px) {
+    font-size: $fontSize;
+    line-height: $fontSize + 16px;
+    color: variaveis.$corTextoPrincipal;
+}
+
+@mixin title($fontSize: 40px) {
+    @include text($fontSize);
+    color: variaveis.$corTextoPrincipal;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+.title--big {
+    @include title(46px);
+}
+
+.title {
+    @include title;
+}
+
+.title--small {
+    @include title(28px);
+}
+
+.text--big {
+    @include text(18px);
+}
+
+.text {
+    @include text(16px);
+}
+
+.text--small {
+    @include text(12px);
+    color: variaveis.$corTextoSecundario;
+    font-family:'Roboto', sans-serif;
+}
+
+.text--strog {
+    color: variaveis.$corTextoSecundario;
+}
+
+ion-icon{
+    font-size: 25px;
+    color: black;
+}
+.button--primary {
+    display: flex;
+    background-color: variaveis.$corDeFundoBotao;
+    max-width: 30%;
+    margin-top: 24px;
+    padding: 8px;
+    justify-content: center;
+    border: none;
+    border-radius: 8px;
+    @include text(24px);
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        background-color: lighten(variaveis.$corDeFundoBotao, 7%);
+    }
+}
+
+.text-section {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 26px;
+
+    &__list{
+
+        &__item{
+            @include text(14px);
+            color: variaveis.$corTextoSecundario;
+            font-family: 'Roboto', sans-serif;
+
+            img{
+                width: 16px;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+
+    .button--primary {
+        max-width: none;
+        width: 50%;
+        letter-spacing: 1.1px;
+        margin-top: 32px;
+    }
+
+    .text-section {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 1023px) {
+
+    .button--primary {
+        max-width: none;
+        width: 50%;
+        letter-spacing: 1.1px;
+        margin-top: 32px;
+    }
+}
