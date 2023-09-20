@@ -1,6 +1,6 @@
 
 .hero {
-    background-image: url('/src/images/kung-fu-panda-hero.jpg');
+    background-image: url('../images/kung-fu-panda-hero.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     top: -20px;
@@ -35,7 +35,7 @@
     }
 
     @media (max-width: 767px) {
-        background-image: url('/src/images/kung-fu-panda-hero.jpg');
+        background-image: url('../images/kung-fu-panda-hero.jpg');
         min-height: 100vh;
         margin-top: -60px;
 
@@ -54,7 +54,7 @@
     }
 
     @media (max-width: 1023px) {
-        background-image: url('/src/images/kung-fu-panda-hero.jpg');
+        background-image: url('../images/kung-fu-panda-hero.jpg');
         min-height: 100vh;
 
         &__branding {
